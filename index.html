@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Snake Game — Neon Deluxe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <h1>Snake — Neon Deluxe</h1>
+        <div style="display:flex;gap:12px;align-items:center">
+          <div class="score">Score: <span id="score">0</span></div>
+          <button class="btn" id="restart">Restart</button>
+          <button class="btn" id="themeBtn">Toggle Theme</button>
+        </div>
+      </header>
+
+      <canvas id="board" width="600" height="600"></canvas>
+
+      <div class="hint">↑↓←→ / WASD — Space: Pause — R: Restart</div>
+
+      <div class="touch-pad">
+        <div class="tp-row"><div class="tp" data-dir="up">▲</div></div>
+        <div class="tp-row">
+          <div class="tp" data-dir="left">◀</div>
+          <div class="tp" data-dir="down">▼</div>
+          <div class="tp" data-dir="right">▶</div>
+        </div>
+      </div>
+
+      <!-- START MODAL -->
+      <div id="startModal" class="modal active">
+        <div class="modal-box">
+          <div class="modal-title">Snake Neon Deluxe</div>
+          <p>Eat food, grow longer, avoid walls & yourself.</p>
+          <button class="modal-btn" id="startBtn">Start Game</button>
+        </div>
+      </div>
+
+      <!-- GAME OVER MODAL -->
+      <div id="gameOverModal" class="modal">
+        <div class="modal-box">
+          <div class="modal-title">Game Over</div>
+          <p>Your final score: <span id="finalScore">0</span></p>
+          <button class="modal-btn" id="retryBtn">Play Again</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
